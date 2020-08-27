@@ -28,6 +28,7 @@ class Buttons extends Component {
 
 const styles = StyleSheet.create({
 
+    
     container:{
         backgroundColor:'yellow',
         width:500,
