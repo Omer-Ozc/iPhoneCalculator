@@ -6,18 +6,19 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class Buttons extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-    
+
     }
-    
+
 
     render() {
+        let backgroundcl = this.props.color ? this.props.color : 'grey'
         return (
-            <View stlye = {styles.container}>
+            <View style={styles.container}>
                 <TouchableOpacity
-                    style={styles.button}
-                    onPress={this.onPress}
+                    style={{ ...styles.button, backgroundColor: backgroundcl }}
+                    onPress={this.props.onPress}
                 >
                     <Text>{this.props.text}</Text>
                 </TouchableOpacity>
@@ -28,17 +29,24 @@ class Buttons extends Component {
 
 const styles = StyleSheet.create({
 
-    
-    container:{
-        backgroundColor:'yellow',
-        width:500,
-        height:500
+
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+
+
     },
 
     button: {
-        alignItems: "center",
-        justifyContent:'center',
-        backgroundColor: "#DDDDDD",
+        width: 65,
+        height: 65,
+        borderRadius: 100,
+        backgroundColor: 'gray',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+
     },
 });
 
