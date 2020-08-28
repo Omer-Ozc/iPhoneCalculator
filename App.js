@@ -5,8 +5,8 @@ import 'react-native-gesture-handler';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AnaSayfa from './src/view/AnaSayfa'
-import { Text,
-} from 'react-native';
+import { Provider } from 'react-redux';
+
 
 
 class App extends Component {
@@ -18,11 +18,13 @@ class App extends Component {
   const Stack = createStackNavigator();
 
     return (
+      <Provider store ={store}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Hesap Makinesi" component={AnaSayfa} />
         </Stack.Navigator>
       </NavigationContainer>
+      </Provider>
     );
   };
 }

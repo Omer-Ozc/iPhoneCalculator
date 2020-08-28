@@ -11,6 +11,10 @@ class Buttons extends Component {
 
     }
 
+    Operation(press){
+        console.log(press)
+    }
+
 
     render() {
         let backgroundcl = this.props.color ? this.props.color : '#A6A6A6' 
@@ -19,7 +23,7 @@ class Buttons extends Component {
             <View style={styles.container}>
                 <TouchableOpacity
                     style={{ ...styles.button, backgroundColor: backgroundcl }}
-                    onPress={this.props.onPress}
+                    onPress={() => this.Operation(this.props.press)}
                 >
                     <Text style = {{color:'white',fontSize:30}}>{this.props.text}</Text>
                 </TouchableOpacity>
