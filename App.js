@@ -6,6 +6,7 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AnaSayfa from './src/view/AnaSayfa'
 import { Provider } from 'react-redux';
+import store from './src/redux/store';
 
 
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import Buttons from '../components/Buttons';
 import { TextInput } from 'react-native-gesture-handler';
-
+import { connect, useDispatch } from 'react-redux';
 
 class AnaSayfa extends Component {
     constructor(props){
@@ -15,12 +15,13 @@ class AnaSayfa extends Component {
 
 
     render() {
+
    
 
         return (
             <View style={styles.container}>
                 <View style ={styles.InputTextStyle}>
-                <Text style = {{color:'white', fontSize:70,padding:20}}>{this.state.entrys}</Text>
+                <Text style = {{color:'white', fontSize:70,padding:20,fontSize:50}}>{this.props.number1}</Text>
                 </View>
                 <View style={styles.RowView}>
                     <Buttons text='AC'
@@ -37,8 +38,7 @@ class AnaSayfa extends Component {
                 </View>
                 <View style={styles.RowView}>
                     <Buttons text='7' 
-                    press ='7'
-                    onPress={()=> {}}/>
+                    press ='7'/>
                     <Buttons text='8'
                     press ='8'
                     onPress={()=> {}} />
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '30%',
         alignItems:'flex-end',
-        justifyContent:'flex-end'
+        justifyContent:'flex-end',
     },
 
     RowView: {
@@ -123,5 +123,12 @@ const styles = StyleSheet.create({
     },
 });
 
+const mapStateToProps = (state) => {
+    return {
+      number1:state.number1,
+      number2:state.number2,
+      result:state.result
+    }
+  }
 
-export default AnaSayfa;
+export default connect(mapStateToProps)(AnaSayfa);
