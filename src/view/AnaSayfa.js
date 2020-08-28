@@ -19,16 +19,18 @@ class AnaSayfa extends Component {
 
         return (
             <View style={styles.container}>
-                <Text style ={styles.InputTextStyle}>{this.state.entrys}</Text>
+                <View style ={styles.InputTextStyle}>
+                <Text style = {{color:'white', fontSize:70,padding:20}}>{this.state.entrys}</Text>
+                </View>
                 <View style={styles.RowView}>
                     <Buttons text='AC'
-                    color='red' 
                     onPress={()=>  {}}/>
                     <Buttons text='+/-' 
                     onPress={()=> {}}/>
                     <Buttons text='%' 
                     onPress={()=> {}}/>
-                    <Buttons text='/' />
+                    <Buttons text='÷'
+                    color='#f19b38' />
                 </View>
                 <View style={styles.RowView}>
                     <Buttons text='7' 
@@ -37,7 +39,8 @@ class AnaSayfa extends Component {
                     onPress={()=> {}} />
                     <Buttons text='9'
                     onPress={()=> {}} />
-                    <Buttons text='x' 
+                    <Buttons text='×' 
+                    color='#f19b38'
                     onPress={()=> {}}/>
                 </View>
                 <View style={styles.RowView}>
@@ -48,24 +51,28 @@ class AnaSayfa extends Component {
                     <Buttons text='6'
                     onPress={()=> {}} />
                     <Buttons text='-' 
+                    color='#f19b38'
                     onPress={()=> {}}/>
                 </View>
                 <View style={styles.RowView}>
-                    <Buttons text='1' 
+                    <Buttons text='1'
                     onPress={()=> {}}/>
-                    <Buttons text='2' 
+                    <Buttons text='2'
                     onPress={()=> {}}/>
-                    <Buttons text='3' 
+                    <Buttons text='3'
                     onPress={()=> {}}/>
-                    <Buttons text='+' 
+                    <Buttons text='+'
+                    color='#f19b38'
+                     
                     onPress={()=> {}}/>
                 </View>
                 <View style={styles.RowView}>
-                    <Buttons text='AC'
+                    <Buttons text='0'
                     onPress={()=> {}} />
-                    <Buttons text='+/-'
+                    <Buttons text=','
                     onPress={()=> {}} />
-                    <Buttons text='AC'
+                    <Buttons text='='
+                    color='#f19b38'
                     onPress={()=> {}} />
                 </View>
             </View>
@@ -81,21 +88,20 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'black',
         flexDirection: 'column'
-
     },
 
     InputTextStyle: {
-        backgroundColor: 'black',
+        color:'white',
         width: '100%',
-        height: '30%'
+        height: '30%',
+        alignItems:'flex-end',
+        justifyContent:'flex-end'
     },
 
     RowView: {
         backgroundColor: 'black',
         flexDirection: 'row',
-        padding: 4,
-
-
+        padding:3
     },
 });
 
